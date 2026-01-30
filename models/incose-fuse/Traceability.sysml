@@ -14,6 +14,23 @@ package Traceability {
 	private import FuSEProgram::*;
 
 	// ================================================================
+	// Causation Metadata
+	// ================================================================
+
+	metadata def CausationMetadata {
+		doc
+		/*
+		 * Causal semantics for megatrend-challenge relationships.
+		 * Inspired by stdlib CauseAndEffect patterns. Captures whether
+		 * a megatrend is a necessary or sufficient cause of a challenge,
+		 * and the probability of the causal relationship manifesting.
+		 */
+		attribute isNecessary : Boolean;
+		attribute isSufficient : Boolean;
+		attribute probability : Real;
+	}
+
+	// ================================================================
 	// Connection Definitions for Traceability
 	// ================================================================
 
@@ -142,66 +159,121 @@ package Traceability {
 
 		connection envSustainability_societal : DrivesChallenge {
 			doc /* Environmental sustainability drives need for SE to address societal problems. */
+			@CausationMetadata {
+				isNecessary = false;
+				isSufficient = false;
+				probability = 0.75;
+			}
 			end source : EnvironmentalSustainability;
 			end target : SocietalProblemSolving;
 		}
 
 		connection digitalTransform_mbse : DrivesChallenge {
 			doc /* Digital transformation drives the imperative to make MBSE standard practice. */
+			@CausationMetadata {
+				isNecessary = true;
+				isSufficient = false;
+				probability = 0.95;
+			}
 			end source : DigitalTransformation;
 			end target : ModelBasedSEAsStandard;
 		}
 
 		connection digitalTransform_collaborative : DrivesChallenge {
 			doc /* Digital transformation enables and requires collaborative digital ecosystems. */
+			@CausationMetadata {
+				isNecessary = true;
+				isSufficient = false;
+				probability = 0.90;
+			}
 			end source : DigitalTransformation;
 			end target : CollaborativeDigitalEcosystem;
 		}
 
 		connection complexity_analysis : DrivesChallenge {
 			doc /* Complexity explosion drives need for advanced analytical methods. */
+			@CausationMetadata {
+				isNecessary = true;
+				isSufficient = false;
+				probability = 0.85;
+			}
 			end source : ComplexityExplosion;
 			end target : ComplexSystemsAnalysis;
 		}
 
 		connection complexity_dynamic : DrivesChallenge {
 			doc /* Growing complexity requires SE to respond dynamically to change. */
+			@CausationMetadata {
+				isNecessary = false;
+				isSufficient = false;
+				probability = 0.70;
+			}
 			end source : ComplexityExplosion;
 			end target : DynamicEnvironmentResponse;
 		}
 
 		connection smartSystems_analysis : DrivesChallenge {
 			doc /* Smart systems proliferation drives new methods for analyzing emergent behaviors. */
+			@CausationMetadata {
+				isNecessary = false;
+				isSufficient = false;
+				probability = 0.80;
+			}
 			end source : SmartSystemsProliferation;
 			end target : ComplexSystemsAnalysis;
 		}
 
 		connection smartSystems_education : DrivesChallenge {
 			doc /* Rapid advancement in smart systems requires continuous SE education. */
+			@CausationMetadata {
+				isNecessary = false;
+				isSufficient = false;
+				probability = 0.75;
+			}
 			end source : SmartSystemsProliferation;
 			end target : ContinuousSEEducation;
 		}
 
 		connection interconnected_collaborative : DrivesChallenge {
 			doc /* Interconnected world requires collaborative ecosystems spanning boundaries. */
+			@CausationMetadata {
+				isNecessary = false;
+				isSufficient = false;
+				probability = 0.85;
+			}
 			end source : InterconnectedWorld;
 			end target : CollaborativeDigitalEcosystem;
 		}
 
 		connection interconnected_scalable : DrivesChallenge {
 			doc /* Global interconnection demands scalable approaches to demonstrating SE value. */
+			@CausationMetadata {
+				isNecessary = false;
+				isSufficient = false;
+				probability = 0.65;
+			}
 			end source : InterconnectedWorld;
 			end target : ScalableDemonstratedValue;
 		}
 
 		connection industry4_reuse : DrivesChallenge {
 			doc /* Industry 4.0 drives need for reusable, composable system elements. */
+			@CausationMetadata {
+				isNecessary = false;
+				isSufficient = false;
+				probability = 0.80;
+			}
 			end source : Industry4Society5;
 			end target : ReuseAndComposability;
 		}
 
 		connection industry4_societal : DrivesChallenge {
 			doc /* Society 5.0 drives SE to focus on solving societal problems. */
+			@CausationMetadata {
+				isNecessary = false;
+				isSufficient = false;
+				probability = 0.60;
+			}
 			end source : Industry4Society5;
 			end target : SocietalProblemSolving;
 		}

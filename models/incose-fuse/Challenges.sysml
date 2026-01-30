@@ -7,6 +7,28 @@ package Challenges {
 	private import ScalarValues::*;
 	private import SETypes::*;
 
+	// RISK METADATA
+
+	enum def RiskLevel {
+		doc /* Qualitative risk level for challenge assessment. */
+		low;
+		medium;
+		high;
+		veryHigh;
+	}
+
+	metadata def ChallengeRisk {
+		doc
+		/*
+		 * Risk assessment metadata for Vision 2035 challenges.
+		 * Captures technical, schedule, and adoption risks
+		 * associated with achieving each challenge.
+		 */
+		attribute technicalRisk : RiskLevel;
+		attribute scheduleRisk : RiskLevel;
+		attribute adoptionRisk : RiskLevel;
+	}
+
 	enum def ChallengeCategory {
 		doc /* Five major categories organizing the SE challenges */
 		applications;
@@ -25,6 +47,11 @@ package Challenges {
 		 * security, and space exploration. Supports policy development considering PESTEL
 		 * factors (political, economic, social, technological, environmental, legal).
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::medium;
+			scheduleRisk = RiskLevel::high;
+			adoptionRisk = RiskLevel::high;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::applications;
 		attribute targetMaturity : Real;
 
@@ -45,6 +72,11 @@ package Challenges {
 		 * Prove value for small, medium, and large organizations. Share knowledge
 		 * and lessons learned to demonstrate scalability and return on investment.
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::low;
+			scheduleRisk = RiskLevel::medium;
+			adoptionRisk = RiskLevel::high;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::applications;
 		attribute targetMaturity : Real;
 
@@ -71,6 +103,11 @@ package Challenges {
 		 * regulations, technology, and disruptions. Reduce development cycle times
 		 * while maintaining quality and robustness in uncertain environments.
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::high;
+			scheduleRisk = RiskLevel::medium;
+			adoptionRisk = RiskLevel::medium;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::practices;
 		attribute targetMaturity : Real;
 
@@ -94,6 +131,11 @@ package Challenges {
 		 * through automation and computation. Transition from document-centric to
 		 * model-centric engineering as the standard practice.
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::medium;
+			scheduleRisk = RiskLevel::medium;
+			adoptionRisk = RiskLevel::high;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::practices;
 		attribute targetMaturity : Real;
 
@@ -120,6 +162,11 @@ package Challenges {
 		 * behavior under adverse conditions including cascading failures, emergent
 		 * behaviors, and adaptation to unexpected scenarios.
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::veryHigh;
+			scheduleRisk = RiskLevel::high;
+			adoptionRisk = RiskLevel::medium;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::practices;
 		attribute targetMaturity : Real;
 
@@ -145,6 +192,11 @@ package Challenges {
 		 * Enable systematic reuse across projects and domains to improve efficiency
 		 * and reduce redundant effort.
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::medium;
+			scheduleRisk = RiskLevel::medium;
+			adoptionRisk = RiskLevel::medium;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::practices;
 		attribute targetMaturity : Real;
 
@@ -169,6 +221,11 @@ package Challenges {
 		 * among customers, contractors, and suppliers through integrated digital
 		 * platforms and standardized interfaces.
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::medium;
+			scheduleRisk = RiskLevel::high;
+			adoptionRisk = RiskLevel::high;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::toolsAndEnvironment;
 		attribute targetMaturity : Real;
 
@@ -194,6 +251,11 @@ package Challenges {
 		 * Teach foundations consistently through evidence-based curricula grounded
 		 * in theory rather than anecdotal experience.
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::veryHigh;
+			scheduleRisk = RiskLevel::high;
+			adoptionRisk = RiskLevel::medium;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::research;
 		attribute targetMaturity : Real;
 
@@ -218,6 +280,11 @@ package Challenges {
 		 * to all contributing engineers, not just specialists, to foster
 		 * cross-disciplinary collaboration and holistic problem-solving.
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::low;
+			scheduleRisk = RiskLevel::medium;
+			adoptionRisk = RiskLevel::high;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::competencies;
 		attribute targetMaturity : Real;
 
@@ -243,6 +310,11 @@ package Challenges {
 		 * OSLC (Open Services for Lifecycle Collaboration), SysML, and UAF (Unified
 		 * Architecture Framework) are helping but adoption is incomplete.
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::medium;
+			scheduleRisk = RiskLevel::high;
+			adoptionRisk = RiskLevel::high;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::toolsAndEnvironment;
 
 		requirement proprietaryFormatFragmentation {
@@ -263,6 +335,11 @@ package Challenges {
 		 * requirements. Traditional waterfall approaches too slow, but pure agile
 		 * insufficient for safety-critical hardware-software integration.
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::high;
+			scheduleRisk = RiskLevel::medium;
+			adoptionRisk = RiskLevel::medium;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::practices;
 
 		requirement cyberPhysicalAgileGap {
@@ -283,6 +360,11 @@ package Challenges {
 		 * validation of opaque decision-making. Need new verification and validation
 		 * techniques for AI/ML systems that adapt and evolve post-deployment.
 		 */
+		@ChallengeRisk {
+			technicalRisk = RiskLevel::veryHigh;
+			scheduleRisk = RiskLevel::high;
+			adoptionRisk = RiskLevel::medium;
+		}
 		attribute category : ChallengeCategory := ChallengeCategory::research;
 
 		requirement trainingDataQuality {
