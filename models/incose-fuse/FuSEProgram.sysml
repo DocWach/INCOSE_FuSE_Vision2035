@@ -15,6 +15,7 @@ package FuSEProgram {
 	// ===================================================================
 
 	part def FuSECharter {
+		@DocumentSource { chapter = 4; sectionRef = "FuSE Charter"; pageRange = "1-2"; figureRef = "FuSE Overview"; }
 		doc
 		/*
 		 * FuSE Program Charter defining vision, mission, and success factors
@@ -398,6 +399,7 @@ package FuSEProgram {
 	// ===================================================================
 
 	part def FuSEOrganization {
+		@DocumentSource { chapter = 4; sectionRef = "FuSE Organization"; pageRange = "3-5"; figureRef = "Org Chart"; }
 		doc
 		/*
 		 * FuSE program organizational structure with central teams and four streams.

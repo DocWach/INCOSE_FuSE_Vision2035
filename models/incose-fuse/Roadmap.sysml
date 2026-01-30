@@ -7,12 +7,14 @@ package Roadmap {
 	 */
 
 	private import ScalarValues::*;
+	private import SETypes::*;
 
 	// ================================================================================
 	// Transformation State Machine
 	// ================================================================================
 
 	state def SETransformation {
+		@DocumentSource { chapter = 4; sectionRef = "4.1"; pageRange = "36-40"; }
 		doc
 		/*
 		 * State machine modeling the transformation from current state SE to Vision 2035 future state.
@@ -175,6 +177,7 @@ package Roadmap {
 	// ================================================================================
 
 	requirement def AcademicRecommendations {
+		@DocumentSource { chapter = 4; sectionRef = "4.2"; pageRange = "40-42"; }
 		doc
 		/*
 		 * Recommendations for academic institutions to prepare the future SE workforce
@@ -222,6 +225,7 @@ package Roadmap {
 	// ================================================================================
 
 	requirement def IndustryGovernmentRecommendations {
+		@DocumentSource { chapter = 4; sectionRef = "4.3"; pageRange = "42-44"; }
 		doc
 		/*
 		 * Recommendations for industry and government organizations to drive SE adoption

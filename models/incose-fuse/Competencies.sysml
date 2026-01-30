@@ -22,6 +22,7 @@ package Competencies {
 	}
 
 	part def CoreSEPrinciples {
+		@DocumentSource { chapter = 2; sectionRef = "2.5"; pageRange = "25-27"; }
 		doc
 		/*
 		 * Core systems engineering principles forming the foundation of SE practice.
@@ -232,6 +233,7 @@ package Competencies {
 	}
 
 	part def EducationPipeline {
+		@DocumentSource { chapter = 2; sectionRef = "2.6"; pageRange = "27-29"; }
 		doc
 		/*
 		 * The educational pipeline for developing systems engineering competencies
@@ -266,6 +268,7 @@ package Competencies {
 	}
 
 	part def WorkforceVision2035 {
+		@DocumentSource { chapter = 2; sectionRef = "2.6"; pageRange = "29-30"; }
 		doc
 		/*
 		 * By 2035, systems thinking will be embedded throughout education levels,

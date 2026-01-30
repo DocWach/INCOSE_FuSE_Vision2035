@@ -181,4 +181,20 @@ package SETypes {
 		 */
 		attribute sectorName : String;
 	}
+
+	// ================================================================
+	// Document Provenance Types
+	// ================================================================
+
+	metadata def DocumentSource {
+		doc
+		/*
+		 * Provenance annotation linking model elements to their source
+		 * location in the INCOSE SE Vision 2035 document or FuSE materials.
+		 */
+		attribute chapter : Natural;
+		attribute sectionRef : String;
+		attribute pageRange : String;
+		attribute figureRef : String[0..1];
+	}
 }
