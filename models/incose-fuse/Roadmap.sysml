@@ -19,6 +19,11 @@ package Roadmap {
 		 * Represents the progression through transformation phases with clear transition points.
 		 */
 
+		attribute mbseAdoptionRate : Real;
+		attribute foundationsPublished : Boolean;
+		attribute workforcePipelineActive : Boolean;
+		attribute digitalEcosystemOperational : Boolean;
+
 		state currentState {
 			doc
 			/*
@@ -30,38 +35,78 @@ package Roadmap {
 		state transitioning {
 			doc
 			/*
-			 * Active transformation: adopting MBSE, building foundations, expanding workforce,
-			 * addressing challenges.
+			 * Active transformation through three progressive milestones.
+			 * Guard conditions are modeled as attributes; transitions occur
+			 * when documented thresholds are met.
 			 */
 
-			state adoptingMBSE {
+			state milestone1_EarlyAdoption {
 				doc
 				/*
-				 * Transition to model-based systems engineering practices across organizations.
+				 * Early Adoption milestone: MBSE pilots launched in >25% of organizations.
+				 * Initial SE theoretical foundations published. Systems thinking introduced
+				 * in undergraduate curricula.
+				 *
+				 * Guard: mbseAdoptionRate > 0.25 AND foundationsPublished = true
+				 * Maps to: ProcessesAndMethods ecosystem change level.
 				 */
+
+				state adoptingMBSE {
+					doc /* Transition to model-based systems engineering practices. */
+				}
+
+				state buildingFoundations {
+					doc /* Establishing theoretical foundations for SE. */
+				}
 			}
 
-			state buildingFoundations {
+			state milestone2_MainstreamAdoption {
 				doc
 				/*
-				 * Establishing theoretical and methodological foundations for systems engineering.
+				 * Mainstream Adoption milestone: MBSE as default practice in >50% of projects.
+				 * Theoretical foundations validated and integrated into curricula.
+				 * Hybrid agile-SE lifecycle methods established.
+				 *
+				 * Guard: mbseAdoptionRate > 0.50 AND workforcePipelineActive = true
+				 * Maps to: EnterpriseAdoption ecosystem change level.
 				 */
+
+				state expandingWorkforce {
+					doc /* Growing the SE workforce with modern competencies. */
+				}
+
+				state addressingChallenges {
+					doc /* Tackling systemic challenges: tool fragmentation, adoption barriers. */
+				}
 			}
 
-			state expandingWorkforce {
+			state milestone3_FullIntegration {
 				doc
 				/*
-				 * Growing and developing the systems engineering workforce with modern competencies.
+				 * Full Integration milestone: Digital engineering ecosystem operational
+				 * across industry. Workforce pipeline producing graduates with SE
+				 * competencies. Continuous improvement culture established.
+				 *
+				 * Guard: digitalEcosystemOperational = true AND mbseAdoptionRate > 0.80
+				 * Maps to: OrganizationalLearning ecosystem change level.
 				 */
+
+				state ecosystemOperational {
+					doc /* Digital engineering ecosystem fully operational. */
+				}
+
+				state continuousImprovement {
+					doc /* Sustained transformation through knowledge management. */
+				}
 			}
 
-			state addressingChallenges {
-				doc
-				/*
-				 * Tackling systemic challenges such as tool fragmentation, adoption barriers,
-				 * and knowledge gaps.
-				 */
-			}
+			transition earlyToMainstream
+				first milestone1_EarlyAdoption
+				then milestone2_MainstreamAdoption;
+
+			transition mainstreamToFull
+				first milestone2_MainstreamAdoption
+				then milestone3_FullIntegration;
 		}
 
 		state futureState {
@@ -106,6 +151,23 @@ package Roadmap {
 		 * Capturing and consistently applying changes across the enterprise.
 		 * Third level ensuring sustained transformation through knowledge management.
 		 */
+	}
+
+	// ================================================================================
+	// Milestone-to-Ecosystem Mapping
+	// ================================================================================
+
+	part def MilestoneEcosystemMapping {
+		doc
+		/*
+		 * Maps the three transformation milestones to the three ecosystem
+		 * change levels, establishing the correspondence between the state
+		 * machine progression and the organizational transformation depth.
+		 */
+
+		attribute milestone1Level : String := "ProcessesAndMethods";
+		attribute milestone2Level : String := "EnterpriseAdoption";
+		attribute milestone3Level : String := "OrganizationalLearning";
 	}
 
 	// ================================================================================
