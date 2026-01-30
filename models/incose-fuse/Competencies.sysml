@@ -9,6 +9,7 @@ package Competencies {
 	 */
 
 	private import ScalarValues::*;
+	private import SETypes::*;
 
 	enum def EmergingSkillDomain {
 		doc
@@ -25,12 +26,36 @@ package Competencies {
 		/*
 		 * Core systems engineering principles forming the foundation of SE practice.
 		 */
-		attribute systemsThinking : String;
-		attribute lifeCycles : String;
-		attribute capabilityEngineering : String;
-		attribute generalEngineering : String;
-		attribute criticalThinking : String;
-		attribute systemsModellingAndAnalysis : String;
+		attribute systemsThinking : CompetencyProfile {
+			doc /* Ability to see the whole system, understand interactions and emergent properties. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::primarySecondary;
+		}
+		attribute lifeCycles : CompetencyProfile {
+			doc /* Understanding of system life cycle stages from concept through retirement. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
+		attribute capabilityEngineering : CompetencyProfile {
+			doc /* Engineering solutions that deliver required operational capabilities to stakeholders. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
+		attribute generalEngineering : CompetencyProfile {
+			doc /* Broad engineering knowledge spanning multiple disciplines. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::primarySecondary;
+		}
+		attribute criticalThinking : CompetencyProfile {
+			doc /* Analytical reasoning and evidence-based evaluation of problems and solutions. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::primarySecondary;
+		}
+		attribute systemsModellingAndAnalysis : CompetencyProfile {
+			doc /* Creating and using models to analyze system behavior, performance, and trade-offs. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
 	}
 
 	part def ProfessionalCompetencies {
@@ -38,14 +63,46 @@ package Competencies {
 		/*
 		 * Professional and interpersonal skills required for effective systems engineering.
 		 */
-		attribute communications : String;
-		attribute ethicsAndProfessionalism : String;
-		attribute technicalLeadership : String;
-		attribute negotiation : String;
-		attribute teamDynamics : String;
-		attribute facilitation : String;
-		attribute emotionalIntelligence : String;
-		attribute coachingAndMentoring : String;
+		attribute communications : CompetencyProfile {
+			doc /* Clear and effective written, oral, and visual communication across audiences. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
+		attribute ethicsAndProfessionalism : CompetencyProfile {
+			doc /* Adherence to ethical standards and professional conduct in engineering practice. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
+		attribute technicalLeadership : CompetencyProfile {
+			doc /* Leading technical teams and guiding engineering decisions. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
+		attribute negotiation : CompetencyProfile {
+			doc /* Reaching agreements among stakeholders with competing interests and constraints. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
+		attribute teamDynamics : CompetencyProfile {
+			doc /* Understanding and managing team interactions, roles, and group performance. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
+		attribute facilitation : CompetencyProfile {
+			doc /* Guiding groups through structured processes to achieve shared outcomes. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
+		attribute emotionalIntelligence : CompetencyProfile {
+			doc /* Recognizing and managing emotions in oneself and others to support collaboration. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
+		attribute coachingAndMentoring : CompetencyProfile {
+			doc /* Developing others through guidance, feedback, and knowledge transfer. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
 	}
 
 	part def TechnicalCompetencies {
@@ -53,15 +110,51 @@ package Competencies {
 		/*
 		 * Technical skills across the systems engineering lifecycle.
 		 */
-		attribute requirementsDefinition : String;
-		attribute systemsArchitecting : String;
-		attribute designFor : String;
-		attribute integration : String;
-		attribute interfaceManagement : String;
-		attribute verificationSkill : String;
-		attribute validationSkill : String;
-		attribute transitionSkill : String;
-		attribute operationAndSupport : String;
+		attribute requirementsDefinition : CompetencyProfile {
+			doc /* Eliciting, analyzing, and specifying stakeholder and system requirements. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
+		attribute systemsArchitecting : CompetencyProfile {
+			doc /* Defining system structure, partitioning, and allocation of functions to components. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::graduate;
+		}
+		attribute designFor : CompetencyProfile {
+			doc /* Design for manufacturing, reliability, maintainability, safety, and other quality attributes. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
+		attribute integration : CompetencyProfile {
+			doc /* Assembling system elements and ensuring they work together as a coherent whole. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
+		attribute interfaceManagement : CompetencyProfile {
+			doc /* Defining, controlling, and managing interfaces between system elements. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
+		attribute verificationSkill : CompetencyProfile {
+			doc /* Confirming that system elements meet their specified requirements through test and analysis. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::undergraduate;
+		}
+		attribute validationSkill : CompetencyProfile {
+			doc /* Confirming that the system fulfills its intended use in the operational environment. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::graduate;
+		}
+		attribute transitionSkill : CompetencyProfile {
+			doc /* Planning and executing the transfer of a system to its operational environment. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::graduate;
+		}
+		attribute operationAndSupport : CompetencyProfile {
+			doc /* Sustaining system performance and capability throughout the operational life cycle. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::graduate;
+		}
 	}
 
 	part def SEManagementCompetencies {
@@ -69,14 +162,46 @@ package Competencies {
 		/*
 		 * Management competencies for systems engineering programs.
 		 */
-		attribute planningMonitoringControl : String;
-		attribute decisionManagement : String;
-		attribute concurrentEngineering : String;
-		attribute businessEnterpriseIntegration : String;
-		attribute acquisitionAndSupply : String;
-		attribute informationManagement : String;
-		attribute configurationManagement : String;
-		attribute riskAndOpportunityManagement : String;
+		attribute planningMonitoringControl : CompetencyProfile {
+			doc /* Planning SE activities, monitoring progress, and controlling deviations. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
+		attribute decisionManagement : CompetencyProfile {
+			doc /* Structured decision-making using trade studies, criteria weighting, and analysis. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
+		attribute concurrentEngineering : CompetencyProfile {
+			doc /* Coordinating parallel engineering activities across disciplines and teams. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
+		attribute businessEnterpriseIntegration : CompetencyProfile {
+			doc /* Aligning SE activities with business objectives and enterprise processes. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::midCareer;
+		}
+		attribute acquisitionAndSupply : CompetencyProfile {
+			doc /* Managing supplier relationships, contracts, and procurement of system elements. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::midCareer;
+		}
+		attribute informationManagement : CompetencyProfile {
+			doc /* Managing engineering data, documents, and knowledge assets across the life cycle. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
+		attribute configurationManagement : CompetencyProfile {
+			doc /* Controlling and tracking system baselines, changes, and product configurations. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
+		attribute riskAndOpportunityManagement : CompetencyProfile {
+			doc /* Identifying, assessing, and mitigating risks while exploiting opportunities. */
+			attribute :>> targetLevel := ProficiencyLevel::expert;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
 	}
 
 	part def IntegratingCompetencies {
@@ -84,10 +209,26 @@ package Competencies {
 		/*
 		 * Cross-cutting competencies that integrate SE with broader organizational functions.
 		 */
-		attribute projectManagement : String;
-		attribute finance : String;
-		attribute logistics : String;
-		attribute quality : String;
+		attribute projectManagement : CompetencyProfile {
+			doc /* Planning, executing, and closing projects within scope, schedule, and budget. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
+		attribute finance : CompetencyProfile {
+			doc /* Understanding cost estimation, budgeting, and financial analysis for engineering programs. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::midCareer;
+		}
+		attribute logistics : CompetencyProfile {
+			doc /* Planning and managing supply chains, maintenance, and sustainment of fielded systems. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::midCareer;
+		}
+		attribute quality : CompetencyProfile {
+			doc /* Applying quality assurance and quality control practices throughout the system life cycle. */
+			attribute :>> targetLevel := ProficiencyLevel::application;
+			attribute :>> introducedAt := EducationStage::earlyCareer;
+		}
 	}
 
 	part def EducationPipeline {
@@ -101,7 +242,7 @@ package Competencies {
 			doc
 			/*
 			 * Systems thinking integrated across STEM curricula. Real-world problem-solving
-			 * through transdisciplinary projects.
+			 * through transdisciplinary projects. Typical proficiency achieved: awareness.
 			 */
 		}
 
@@ -110,6 +251,7 @@ package Competencies {
 			/*
 			 * Specialized tracks for research SE, systems integrator, architect roles.
 			 * Shift from design-build-test to model-simulate-analyze-build.
+			 * Typical proficiency achieved: application.
 			 */
 		}
 
@@ -118,6 +260,7 @@ package Competencies {
 			/*
 			 * Corporate internal universities providing continuous learning. Professional
 			 * certification programs. Established career progression pathways.
+			 * Typical proficiency achieved: expert to thoughtLeader.
 			 */
 		}
 	}
