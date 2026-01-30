@@ -177,6 +177,10 @@ package FuSEProgram {
 		attribute sev2034 : String := "SEV2034";
 		attribute react : String := "REAct";
 		attribute fuseRoadmap : String := "FuSERoadmap";
+
+		out attribute visionDirection : String;
+		out attribute roadmapUpdates : String;
+		in attribute streamFeedback : String;
 	}
 
 	part def SEFoundations {
@@ -198,6 +202,11 @@ package FuSEProgram {
 		attribute seHeuristicsV5 : String := "SEHeuristicsV5";
 		attribute sePrinciples : String := "SEPrinciples";
 		attribute scienceFoundationsForSE : String := "ScienceFoundationsForSE";
+
+		out attribute researchFindings : String;
+		out attribute theoreticalFrameworks : String;
+		in attribute methodologyNeeds : String;
+		in attribute applicationInsights : String;
 	}
 
 	part def SEMethodologies {
@@ -221,6 +230,11 @@ package FuSEProgram {
 		attribute agility : String := "Agility";
 		attribute complexSystems : String := "ComplexSystems";
 		attribute socialSystems : String := "SocialSystems";
+
+		in attribute foundationalTheory : String;
+		out attribute methodGuides : String;
+		out attribute toolRequirements : String;
+		in attribute practiceGaps : String;
 	}
 
 	part def SEApplicationExtensions {
@@ -239,6 +253,61 @@ package FuSEProgram {
 		// Sub-projects
 		attribute contextualEcosystems : String := "ContextualEcosystems";
 		attribute smartCities : String := "SmartCities";
+
+		in attribute methodsAndTools : String;
+		out attribute domainCaseStudies : String;
+		out attribute applicationFeedback : String;
+	}
+
+	// ===================================================================
+	// Stream Interaction Connections
+	// ===================================================================
+
+	connection def StreamInteraction {
+		doc
+		/*
+		 * Information flow between FuSE streams representing knowledge transfer,
+		 * feedback loops, and artifact exchange.
+		 */
+	}
+
+	connection def VisionToStreams :> StreamInteraction {
+		doc
+		/*
+		 * Vision and roadmaps provide strategic direction to all other streams.
+		 */
+	}
+
+	connection def FoundationsToMethodologies :> StreamInteraction {
+		doc
+		/*
+		 * Research findings and theoretical frameworks flow from Foundations
+		 * to Methodologies for codification into practices.
+		 */
+	}
+
+	connection def MethodologiesToApplications :> StreamInteraction {
+		doc
+		/*
+		 * Method guides and tool requirements flow from Methodologies to
+		 * Application Extensions for domain-specific deployment.
+		 */
+	}
+
+	connection def ApplicationsToVision :> StreamInteraction {
+		doc
+		/*
+		 * Domain case studies and application feedback flow from Application
+		 * Extensions back to Vision for roadmap refinement.
+		 */
+	}
+
+	connection def MethodologiesToFoundations :> StreamInteraction {
+		doc
+		/*
+		 * Methodology needs and practice gaps feed back to Foundations
+		 * to guide future research priorities.
+		 */
 	}
 
 	// ===================================================================
@@ -269,6 +338,29 @@ package FuSEProgram {
 		part foundationsStream : SEFoundations;
 		part methodologiesStream : SEMethodologies;
 		part applicationExtensionsStream : SEApplicationExtensions;
+
+		// Stream Interactions
+		connection visionToFoundations : VisionToStreams {
+			doc /* Strategic direction flows from Vision to Foundations. */
+		}
+		connection visionToMethodologies : VisionToStreams {
+			doc /* Strategic direction flows from Vision to Methodologies. */
+		}
+		connection visionToApplications : VisionToStreams {
+			doc /* Strategic direction flows from Vision to Applications. */
+		}
+		connection foundationsToMethods : FoundationsToMethodologies {
+			doc /* Research and theory flows from Foundations to Methodologies. */
+		}
+		connection methodsToApps : MethodologiesToApplications {
+			doc /* Methods and tools flow from Methodologies to Applications. */
+		}
+		connection appsToVision : ApplicationsToVision {
+			doc /* Case studies and feedback flow from Applications back to Vision. */
+		}
+		connection methodsToFoundations : MethodologiesToFoundations {
+			doc /* Practice gaps feed back from Methodologies to Foundations. */
+		}
 	}
 
 	// ===================================================================
