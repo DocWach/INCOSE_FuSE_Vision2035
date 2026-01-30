@@ -30,6 +30,7 @@ package Challenges {
 	}
 
 	enum def ChallengeCategory {
+		@DocumentSource { chapter = 2; sectionRef = "2.0"; pageRange = "18-19"; }
 		doc /* Five major categories organizing the SE challenges */
 		applications;
 		practices;
@@ -381,6 +382,7 @@ package Challenges {
 	// CHALLENGE FRAMEWORK
 
 	part def ChallengeFramework {
+		@DocumentSource { chapter = 2; sectionRef = "2.0"; pageRange = "18-30"; }
 		doc /*
 		 * Comprehensive framework organizing all INCOSE Vision 2035 challenges
 		 * into a coherent structure for addressing the future of systems engineering.

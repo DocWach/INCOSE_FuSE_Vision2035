@@ -8,6 +8,7 @@ package GlobalContext {
 	 */
 
 	private import ScalarValues::*;
+	private import SETypes::*;
 
 	// ==========================================
 	// 6 Megatrends
@@ -92,6 +93,7 @@ package GlobalContext {
 	// ==========================================
 
 	enum def TechnologyTrend {
+		@DocumentSource { chapter = 1; sectionRef = "1.2"; pageRange = "10-13"; }
 		doc
 		/*
 		 * Ten key technology trends shaping the future of systems engineering,
@@ -191,6 +193,7 @@ package GlobalContext {
 	// ==========================================
 
 	part def EnterpriseEnvironment {
+		@DocumentSource { chapter = 1; sectionRef = "1.4"; pageRange = "15-17"; }
 		doc
 		/*
 		 * The evolving enterprise environment characterized by globalization,

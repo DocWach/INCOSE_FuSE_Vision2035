@@ -2,6 +2,7 @@ package Vision2035 {
 	doc /* INCOSE Systems Engineering Vision 2035: Engineering Solutions for a Better World */
 
 	private import ScalarValues::*;
+	private import SETypes::*;
 
 	enum def DocumentChapter {
 		doc /* The four main chapters of the Vision 2035 document */
@@ -12,6 +13,7 @@ package Vision2035 {
 	}
 
 	enum def StakeholderGroup {
+		@DocumentSource { chapter = 0; sectionRef = "Introduction"; pageRange = "3-5"; }
 		doc /* Seven key stakeholder groups identified in Vision 2035 */
 		engineeringLeadership;
 		engineeringPractitioners;
@@ -23,6 +25,7 @@ package Vision2035 {
 	}
 
 	enum def ApplicationDomain {
+		@DocumentSource { chapter = 0; sectionRef = "Introduction"; pageRange = "5-7"; }
 		doc /* Six primary application domains for systems engineering */
 		exploration;
 		powerAndEnergy;
@@ -33,6 +36,7 @@ package Vision2035 {
 	}
 
 	enum def PESTELDimension {
+		@DocumentSource { chapter = 1; sectionRef = "1.0"; pageRange = "8-9"; }
 		doc /* PESTEL analysis dimensions for global context */
 		political;
 		economic;

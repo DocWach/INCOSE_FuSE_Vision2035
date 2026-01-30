@@ -11,6 +11,7 @@ package FutureState {
 	 */
 
 	private import ScalarValues::*;
+	private import SETypes::*;
 
 	// ===================================================================
 	// MBSE-SMS Framework - 6 Capability Areas
@@ -30,6 +31,7 @@ package FutureState {
 	}
 
 	part def ModelBasedSystemsEngineering {
+		@DocumentSource { chapter = 3; sectionRef = "3.1"; pageRange = "31-33"; }
 		doc /*
 		 * Semantically rich modeling standards.
 		 * Systems abstraction with data traceability.
@@ -58,6 +60,7 @@ package FutureState {
 	}
 
 	part def MultiScaleSimulation {
+		@DocumentSource { chapter = 3; sectionRef = "3.2"; pageRange = "33-34"; }
 		doc /*
 		 * Layered models at multiple abstraction levels.
 		 * Real-time simulation from single vehicle to regional fleet scope.
@@ -73,6 +76,7 @@ package FutureState {
 	}
 
 	part def ExtendedReality {
+		@DocumentSource { chapter = 3; sectionRef = "3.3"; pageRange = "34-35"; }
 		doc /*
 		 * Augmented, virtual, and mixed reality integration.
 		 * Gaming engine photo-realism for design exploration.
