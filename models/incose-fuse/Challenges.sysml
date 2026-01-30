@@ -5,6 +5,7 @@ package Challenges {
 	 */
 
 	private import ScalarValues::*;
+	private import SETypes::*;
 
 	enum def ChallengeCategory {
 		doc /* Five major categories organizing the SE challenges */
@@ -25,6 +26,17 @@ package Challenges {
 		 * factors (political, economic, social, technological, environmental, legal).
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::applications;
+		attribute targetMaturity : Real;
+
+		requirement climateSEContribution {
+			doc /* SE methods applied to climate change mitigation with measurable impact metrics. */
+		}
+		requirement policyEngagement {
+			doc /* SE frameworks adopted in PESTEL-aware policy development processes. */
+		}
+		requirement crossDomainApplication {
+			doc /* SE applied across infrastructure, security, healthcare, and space exploration domains. */
+		}
 	}
 
 	requirement def ScalableDemonstratedValue {
@@ -34,6 +46,21 @@ package Challenges {
 		 * and lessons learned to demonstrate scalability and return on investment.
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::applications;
+		attribute targetMaturity : Real;
+
+		requirement smallEnterpriseAdoption {
+			doc /* SE practices tailored and demonstrated for organizations with <100 engineers. */
+		}
+		requirement roiDemonstration {
+			doc /* Measurable return on investment documented for >70% of SE engagements. */
+			attribute roiThreshold : Real := 0.70;
+		}
+		requirement knowledgeSharingPlatform {
+			doc /* Lessons learned and best practices shared across domains via accessible repositories. */
+		}
+		requirement domainScalabilityEvidence {
+			doc /* SE value demonstrated in at least 5 distinct industry domains with published case studies. */
+		}
 	}
 
 	// PRACTICES CHALLENGES
@@ -45,6 +72,19 @@ package Challenges {
 		 * while maintaining quality and robustness in uncertain environments.
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::practices;
+		attribute targetMaturity : Real;
+
+		requirement cycleTimeReduction {
+			doc /* Development cycle times reduced by >30% compared to traditional approaches. */
+			attribute reductionThreshold : Real := 0.30;
+		}
+		requirement regulatoryAdaptation {
+			doc /* SE processes accommodate regulatory changes within one iteration cycle. */
+		}
+		requirement disruptionResilience {
+			doc /* Systems designed to maintain >90% operational capability under disruption scenarios. */
+			attribute resilienceThreshold : Real := 0.90;
+		}
 	}
 
 	requirement def ModelBasedSEAsStandard {
@@ -55,6 +95,22 @@ package Challenges {
 		 * model-centric engineering as the standard practice.
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::practices;
+		attribute targetMaturity : Real;
+
+		requirement modelingStandardAdoption {
+			doc /* >80% of SE projects use standardized modeling languages. */
+			attribute adoptionThreshold : Real := 0.80;
+		}
+		requirement simulationDrivenDesign {
+			doc /* Models directly executable for multi-disciplinary simulation and analysis. */
+		}
+		requirement documentToModelTransition {
+			doc /* Organizations transition from document-centric to model-centric as default practice. */
+		}
+		requirement digitalTwinCoverage {
+			doc /* Digital twin representations maintained for >60% of system lifecycle phases. */
+			attribute coverageThreshold : Real := 0.60;
+		}
 	}
 
 	requirement def ComplexSystemsAnalysis {
@@ -65,6 +121,21 @@ package Challenges {
 		 * behaviors, and adaptation to unexpected scenarios.
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::practices;
+		attribute targetMaturity : Real;
+
+		requirement cascadingFailureAnalysis {
+			doc /* Analytical methods identify >95% of cascading failure paths in interconnected systems. */
+			attribute detectionThreshold : Real := 0.95;
+		}
+		requirement emergentBehaviorDetection {
+			doc /* Tools detect and characterize emergent behaviors in system-of-systems architectures. */
+		}
+		requirement safetyTrustworthinessAssurance {
+			doc /* Quantitative safety and trustworthiness metrics defined and validated for autonomous systems. */
+		}
+		requirement adverseConditionSimulation {
+			doc /* Systems analyzed under adverse conditions including environmental, cyber, and operational threats. */
+		}
 	}
 
 	requirement def ReuseAndComposability {
@@ -75,6 +146,18 @@ package Challenges {
 		 * and reduce redundant effort.
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::practices;
+		attribute targetMaturity : Real;
+
+		requirement reuseRateTarget {
+			doc /* >50% of system components sourced from verified reusable asset libraries. */
+			attribute reuseThreshold : Real := 0.50;
+		}
+		requirement productLineArchitecture {
+			doc /* Product-line engineering practices established with configurable variability models. */
+		}
+		requirement designPatternCatalog {
+			doc /* Curated catalog of SE design patterns maintained and accessible across domains. */
+		}
 	}
 
 	// TOOLS AND ENVIRONMENT CHALLENGES
@@ -87,6 +170,19 @@ package Challenges {
 		 * platforms and standardized interfaces.
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::toolsAndEnvironment;
+		attribute targetMaturity : Real;
+
+		requirement distributedTeamIntegration {
+			doc /* Globally distributed teams collaborate with <5% overhead compared to co-located teams. */
+			attribute overheadThreshold : Real := 0.05;
+		}
+		requirement lifecycleDataGovernance {
+			doc /* Lifecycle data access controlled with role-based security across supply chain partners. */
+		}
+		requirement standardizedPlatformInterfaces {
+			doc /* >75% of collaboration tools interoperate via standardized APIs and data formats. */
+			attribute interopThreshold : Real := 0.75;
+		}
 	}
 
 	// RESEARCH CHALLENGES
@@ -99,6 +195,18 @@ package Challenges {
 		 * in theory rather than anecdotal experience.
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::research;
+		attribute targetMaturity : Real;
+
+		requirement theoreticalBaseFormalization {
+			doc /* Core SE principles formalized with mathematical or logical foundations. */
+		}
+		requirement evidenceBasedCurricula {
+			doc /* >80% of accredited SE programs adopt evidence-based curricula over anecdotal methods. */
+			attribute curriculaThreshold : Real := 0.80;
+		}
+		requirement domainComplexityTailoring {
+			doc /* SE practices systematically adapted to domain-specific complexity and risk profiles. */
+		}
 	}
 
 	// COMPETENCIES CHALLENGES
@@ -111,6 +219,18 @@ package Challenges {
 		 * cross-disciplinary collaboration and holistic problem-solving.
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::competencies;
+		attribute targetMaturity : Real;
+
+		requirement curriculaIntegration {
+			doc /* Systems thinking integrated into >60% of accredited engineering degree programs. */
+			attribute integrationThreshold : Real := 0.60;
+		}
+		requirement lifelongLearningSupport {
+			doc /* Continuing education pathways available for practicing engineers to update SE skills. */
+		}
+		requirement crossDisciplinaryCompetency {
+			doc /* Non-specialist engineers demonstrate baseline systems thinking competency via assessment. */
+		}
 	}
 
 	// CURRENT-STATE CHALLENGES (Chapter 2)
@@ -124,6 +244,16 @@ package Challenges {
 		 * Architecture Framework) are helping but adoption is incomplete.
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::toolsAndEnvironment;
+
+		requirement proprietaryFormatFragmentation {
+			doc /* Specialized tools use incompatible proprietary data formats hindering exchange. */
+		}
+		requirement standardsAdoptionGap {
+			doc /* FMI, OSLC, SysML, and UAF standards exist but adoption remains incomplete across industry. */
+		}
+		requirement toolChainInteroperability {
+			doc /* End-to-end tool chains require manual data transformation at integration points. */
+		}
 	}
 
 	requirement def SoftwareComplexityAndAgility {
@@ -134,6 +264,16 @@ package Challenges {
 		 * insufficient for safety-critical hardware-software integration.
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::practices;
+
+		requirement cyberPhysicalAgileGap {
+			doc /* Pure agile methods insufficient for safety-critical hardware-software integration. */
+		}
+		requirement regulatoryComplianceConflict {
+			doc /* Continuous deployment practices conflict with regulatory approval cycles. */
+		}
+		requirement hybridLifecycleNeed {
+			doc /* No mature hybrid lifecycle balancing agile speed with waterfall rigor for CPS. */
+		}
 	}
 
 	requirement def AIAndAutonomousSystems {
@@ -144,6 +284,16 @@ package Challenges {
 		 * techniques for AI/ML systems that adapt and evolve post-deployment.
 		 */
 		attribute category : ChallengeCategory := ChallengeCategory::research;
+
+		requirement trainingDataQuality {
+			doc /* No established SE methods for ensuring training data quality and eliminating bias. */
+		}
+		requirement opaqueDecisionValidation {
+			doc /* Traditional V&V techniques cannot validate opaque AI/ML decision-making processes. */
+		}
+		requirement postDeploymentEvolution {
+			doc /* Lack of SE frameworks for systems that self-learn and adapt after deployment. */
+		}
 	}
 
 	// CHALLENGE FRAMEWORK
