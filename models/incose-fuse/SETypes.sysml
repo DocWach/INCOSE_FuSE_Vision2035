@@ -129,6 +129,18 @@ package SETypes {
 		attribute status : ProjectStatus;
 	}
 
+	part def FuSESubProject {
+		doc
+		/*
+		 * Typed representation of a FuSE sub-project with lead,
+		 * objective, status, and stream assignment.
+		 */
+		attribute projectName : String;
+		attribute lead : String;
+		attribute projectObjective : String;
+		attribute projectStatus : ProjectStatus;
+	}
+
 	// ================================================================
 	// Challenge Priority Types
 	// ================================================================
@@ -150,5 +162,23 @@ package SETypes {
 		low {
 			doc /* Limited immediate impact; monitor and address opportunistically. */
 		}
+	}
+
+	attribute def ChallengePriority {
+		doc
+		/*
+		 * Maps a specific challenge to a priority level for a given sector.
+		 */
+		attribute challengeName : String;
+		attribute priority : PriorityLevel;
+	}
+
+	part def SectorChallengeProfile {
+		doc
+		/*
+		 * Per-sector profile mapping each of the 12 challenges to a
+		 * priority level based on sector-specific urgency.
+		 */
+		attribute sectorName : String;
 	}
 }

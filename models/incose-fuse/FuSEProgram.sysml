@@ -8,6 +8,7 @@ package FuSEProgram {
 	 */
 
 	private import ScalarValues::*;
+	private import SETypes::*;
 
 	// ===================================================================
 	// Program Charter
@@ -173,10 +174,26 @@ package FuSEProgram {
 		attribute streamLead : String := "Paul Schreinemakers";
 		attribute iwGoal : String := "Frame the structural relationships and value models for the roadmaps creation";
 
-		// Sub-projects
-		attribute sev2034 : String := "SEV2034";
-		attribute react : String := "REAct";
-		attribute fuseRoadmap : String := "FuSERoadmap";
+		part sev2034 : FuSESubProject {
+			attribute :>> projectName := "SE Vision 2034 Update";
+			attribute :>> lead := "Paul Schreinemakers";
+			attribute :>> projectObjective := "Update and extend the SE Vision toward 2034 horizon";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
+
+		part react : FuSESubProject {
+			attribute :>> projectName := "REAct - Roadmap Evolution and Action";
+			attribute :>> lead := "Paul Schreinemakers";
+			attribute :>> projectObjective := "Create actionable roadmaps for vision realization";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
+
+		part fuseRoadmap : FuSESubProject {
+			attribute :>> projectName := "FuSE Integrated Roadmap";
+			attribute :>> lead := "Paul Schreinemakers";
+			attribute :>> projectObjective := "Integrate roadmaps across the four FuSE streams";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
 
 		out attribute visionDirection : String;
 		out attribute roadmapUpdates : String;
@@ -197,11 +214,33 @@ package FuSEProgram {
 		attribute streamLead : String := "Oli de Weck";
 		attribute iwGoal : String := "Assess the foundational value of the Conservation of System Complexity";
 
-		// Sub-projects
-		attribute bridgeTeam : String := "BridgeTeam";
-		attribute seHeuristicsV5 : String := "SEHeuristicsV5";
-		attribute sePrinciples : String := "SEPrinciples";
-		attribute scienceFoundationsForSE : String := "ScienceFoundationsForSE";
+		part bridgeTeam : FuSESubProject {
+			attribute :>> projectName := "Bridge Team";
+			attribute :>> lead := "Oli de Weck";
+			attribute :>> projectObjective := "Bridge between SE foundations research and practice";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
+
+		part seHeuristicsV5 : FuSESubProject {
+			attribute :>> projectName := "SE Heuristics Version 5";
+			attribute :>> lead := "Oli de Weck";
+			attribute :>> projectObjective := "Codify and validate SE heuristics for practitioner guidance";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
+
+		part sePrinciples : FuSESubProject {
+			attribute :>> projectName := "SE Principles";
+			attribute :>> lead := "Oli de Weck";
+			attribute :>> projectObjective := "Establish foundational principles for systems engineering";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
+
+		part scienceFoundationsForSE : FuSESubProject {
+			attribute :>> projectName := "Science Foundations for SE";
+			attribute :>> lead := "Oli de Weck";
+			attribute :>> projectObjective := "Formulate candidate Laws of Systemics as SE theoretical basis";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
 
 		out attribute researchFindings : String;
 		out attribute theoreticalFrameworks : String;
@@ -223,13 +262,47 @@ package FuSEProgram {
 		attribute streamLead : String := "Chris Hoffman";
 		attribute iwGoal : String := "Assess the adequacy of current INCOSE technical products and ongoing FuSE projects and identify gaps";
 
-		// Sub-projects
-		attribute se4AI_AI4SE : String := "SE4AI_AI4SE";
-		attribute humanSystemsIntegration : String := "HumanSystemsIntegration";
-		attribute systemSecurity : String := "SystemSecurity";
-		attribute agility : String := "Agility";
-		attribute complexSystems : String := "ComplexSystems";
-		attribute socialSystems : String := "SocialSystems";
+		part se4AI_AI4SE : FuSESubProject {
+			attribute :>> projectName := "SE for AI and AI for SE";
+			attribute :>> lead := "Chris Hoffman";
+			attribute :>> projectObjective := "Develop methods for AI-enabled SE and SE of AI systems";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
+
+		part humanSystemsIntegration : FuSESubProject {
+			attribute :>> projectName := "Human Systems Integration";
+			attribute :>> lead := "Chris Hoffman";
+			attribute :>> projectObjective := "Integrate human factors into SE methods and tools";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
+
+		part systemSecurity : FuSESubProject {
+			attribute :>> projectName := "System Security";
+			attribute :>> lead := "Chris Hoffman";
+			attribute :>> projectObjective := "Develop security engineering methods for complex systems";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
+
+		part agility : FuSESubProject {
+			attribute :>> projectName := "Agility in SE";
+			attribute :>> lead := "Chris Hoffman";
+			attribute :>> projectObjective := "Integrate agile practices with systems engineering lifecycle";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
+
+		part complexSystems : FuSESubProject {
+			attribute :>> projectName := "Complex Systems";
+			attribute :>> lead := "Chris Hoffman";
+			attribute :>> projectObjective := "Develop methods addressing system complexity and emergence";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
+
+		part socialSystems : FuSESubProject {
+			attribute :>> projectName := "Social Systems";
+			attribute :>> lead := "Chris Hoffman";
+			attribute :>> projectObjective := "Extend SE practices to social and socio-technical systems";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
 
 		in attribute foundationalTheory : String;
 		out attribute methodGuides : String;
@@ -250,9 +323,19 @@ package FuSEProgram {
 		attribute streamLead : String := "Tom Strandberg";
 		attribute iwGoal : String := "Frame the value model to justify systems engineering's role at the policy table for grand challenges";
 
-		// Sub-projects
-		attribute contextualEcosystems : String := "ContextualEcosystems";
-		attribute smartCities : String := "SmartCities";
+		part contextualEcosystems : FuSESubProject {
+			attribute :>> projectName := "Contextual Ecosystems";
+			attribute :>> lead := "Tom Strandberg";
+			attribute :>> projectObjective := "Apply SE to contextual ecosystem challenges";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
+
+		part smartCities : FuSESubProject {
+			attribute :>> projectName := "Smart Cities";
+			attribute :>> lead := "Tom Strandberg";
+			attribute :>> projectObjective := "Apply SE to smart city design and urban systems challenges";
+			attribute :>> projectStatus := ProjectStatus::active;
+		}
 
 		in attribute methodsAndTools : String;
 		out attribute domainCaseStudies : String;
